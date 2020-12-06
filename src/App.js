@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Login from './components/Login';
+import Logout from './components/Logout';
 
 function App() {
+  const [tokendata, setTokenData] = useState(false);
+
+  const toggleBtn = (e) => {
+    if(e === 'logout') {
+      localStorage.clear();
+      setTokenData(false);
+    } else {
+      if(localStorage.getItem('authToken')) {
+        setTokenData(true);
+      }
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!tokendata && <Login toggleBtn = {toggleBtn}/>}
+      {tokendata && <Logout toggleBtn = {toggleBtn} />}
     </div>
   );
 }
