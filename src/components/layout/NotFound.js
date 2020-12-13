@@ -2,8 +2,8 @@ import React from 'react'
 import {
     Link
 } from "react-router-dom";
-import "./NotFound.css";
-function NotFound() {
+import "./css/NotFound.css";
+const NotFound = () => {
     return (
         <section className="page_404">
             <div className="container">
