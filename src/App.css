@@ -706,13 +706,6 @@ a.remove:hover {
   min-height: 3rem;
 }
 
-/** List Page **/
-
-/** Previous Orders Page **/
-body {
-  margin-top: 20px;
-  background: #eee;
-}
 /* My Account */
 .payments-item img.mr-3 {
   width: 47px;
