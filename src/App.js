@@ -1,26 +1,15 @@
-import { useState } from 'react';
 import './App.css';
 import Login from './components/Login';
-import Logout from './components/Logout';
-
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
 function App() {
-  const [tokendata, setTokenData] = useState(false);
-
-  const toggleBtn = (e) => {
-    if(e === 'logout') {
-      localStorage.clear();
-      setTokenData(false);
-    } else {
-      if(localStorage.getItem('authToken')) {
-        setTokenData(true);
-      }
-    }
-  }
-
   return (
-    <div className="App">
-      {!tokendata && <Login toggleBtn = {toggleBtn}/>}
-      {tokendata && <Logout toggleBtn = {toggleBtn} />}
+    <div className="bg-light">
+      <Login />
     </div>
   );
 }
