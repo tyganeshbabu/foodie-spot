@@ -1,10 +1,10 @@
 import React from "react";
-import "./Login.css";
-import logo from '../assets/logo.png';
-
-const Login = () => {
+import "./css/Login.css";
+import logo from '../../assets/logo.png';
+const Login = (props) => {
   const onSubmit = (event) => {
     console.log('submitted');
+    props.history.push('/products');
     event.preventDefault();
   }
   return (

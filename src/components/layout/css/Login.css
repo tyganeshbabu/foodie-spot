@@ -108,8 +108,9 @@ input.submit-btn {
 input.submit-btn:focus {
   box-shadow: none;
 }
-input.submit-btn:hover {
-  background-color: #a31f10;
+.login-container input.submit-btn:hover,
+.login-container input.submit-btn:focus {
+  background-color: #a31f10 !important;
   color: #fff;
 }
 

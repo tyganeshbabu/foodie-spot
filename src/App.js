@@ -1,7 +1,7 @@
 import './App.css';
-import Login from './components/Login';
-import Products from './components/Products';
-import NotFound from './components/NotFound';
+import Login from './components/layout/Login';
+import Products from './components/layout/Products';
+import NotFound from './components/layout/NotFound';
 import {
   BrowserRouter as Router,
   Switch,
