@@ -3,10 +3,10 @@ div.login-main {
   width: 100%;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0px auto;
-}
+} */
 
 input {
   font-family: "Open Sans", Arial, sans-serif;
@@ -123,7 +123,7 @@ input.submit-btn:focus {
 }
 .login-middle {
   display: flex;
-  width: 600px;
+  /* width: 600px; */
 }
 
 .login-center {
