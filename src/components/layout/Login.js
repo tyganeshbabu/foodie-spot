@@ -1,28 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/Login.css";
 import logo from '../../assets/logo.png';
-const Login = (props) => {
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
+import alertify from 'alertifyjs';
+const Login = ({ login, isAuthenticated, history }) => {
+
+  const [formData, setFormData] = useState({
+    username: '',
+    password: ''
+  });
+  const { username, password } = formData;
+
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  //e.target.name for getting username,password
+
   const onSubmit = (event) => {
-    console.log('submitted');
-    props.history.push('/products');
+    alertify.set('notifier', 'position', 'top-right');
+    login(username, password);
     event.preventDefault();
   }
+
+  if (isAuthenticated) {
+    return <Redirect to="/products" />;
+  }
+
   return (
     <div className="login-main">
       <div className="login-container">
         <div className="login-center">
           <div className="login-middle">
             <div id="loginform">
-              {/* <div className="linkStyle ml-4 mb-2">
-                <h4>Login</h4>
-              </div> */}
-              <form onClick={onSubmit}>
+              <form onSubmit={onSubmit} autoComplete="off">
                 <fieldset className="login-fieldset">
                   <p>
                     <span className="fa fa-user login-user-icon"></span
                     ><input
+                      autoFocus
                       className="login-user"
                       type="text"
+                      value={username}
+                      name="username"
+                      onChange={onChange}
                       placeholder="Username"
                     />
                   </p>
@@ -31,20 +53,23 @@ const Login = (props) => {
                     ><input
                       className="login-pass"
                       type="password"
+                      value={password}
+                      name="password"
+                      onChange={onChange}
                       placeholder="Password"
                     />
                   </p>
                   <div>
                     <input
                       type="submit"
-                      value="Sign In"
+                      value="Sign In" disabled={(username.trim() === '' || password.trim() === '')}
                       className="btn btn-md submit-btn"
                     />
                   </div>
                 </fieldset>
               </form>
               <div className="login-logo-mob">
-                <img alt="Foodie Spot Logo" src={logo} className="login-logo-img-mob ml-5" />
+                <img alt="Foodie Spot Logo" src={logo} className="login-logo-img-mob ml-4" />
               </div>
             </div>
             <div className="login-logo">
@@ -57,4 +82,14 @@ const Login = (props) => {
   );
 }
 
-export default Login;
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(Login);

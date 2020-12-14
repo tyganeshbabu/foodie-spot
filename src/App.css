@@ -4,6 +4,7 @@ body {
   /* background: #16222a !important;
   background: -webkit-linear-gradient(to right, #16222a, #3a6073);
   background: linear-gradient(to right, #16222a, #3a6073); */
+  background-color: #f8f9fa !important;
 }
 
 button,
@@ -144,6 +145,11 @@ a.btn {
   color: #a31f10 !important;
 }
 
+a.dropdown-item.active,
+a.dropdown-item:active {
+  background: #eee;
+  color: #a31f10;
+}
 /** Button animation css **/
 
 /* button {
@@ -793,3 +799,7 @@ a.remove:hover {
 background: #16222a;
 background: -webkit-linear-gradient(to right, #16222a, #3a6073);
 background: linear-gradient(to right, #16222a, #3a6073); */
+
+div.alertify-notifier {
+  color: #fff;
+}
