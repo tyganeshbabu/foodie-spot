@@ -13,6 +13,7 @@ a.btn {
 
 .home-container {
   padding-top: 56px;
+  height: calc(100vh - 3rem);
 }
 
 @media (max-width: 767.98px) {
@@ -769,7 +770,7 @@ a.remove:hover {
   }
   .main-navbar-collapse {
     background: #eee;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     margin-left: 0rem;
     width: 100%;
     padding: 1rem;
