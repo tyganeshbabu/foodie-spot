@@ -8,19 +8,25 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-function App() {
+
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
+const App = () => {
   return (
-    <div className="bg-light">
-      <Router>
-        <Switch>
-          <Route exact path='/'
-            component={() => (<Redirect to='/login' />)} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/products" component={Products} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </div>
+    <Provider store={store}>
+      <div className="bg-light">
+        <Router>
+          <Switch>
+            <Route exact path='/'
+              component={() => (<Redirect to='/login' />)} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/products" component={Products} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

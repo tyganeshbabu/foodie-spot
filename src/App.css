@@ -144,6 +144,11 @@ a.btn {
   color: #a31f10 !important;
 }
 
+a.dropdown-item.active,
+a.dropdown-item:active {
+  background: #eee;
+  color: #a31f10;
+}
 /** Button animation css **/
 
 /* button {
