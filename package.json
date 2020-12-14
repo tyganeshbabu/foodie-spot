@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "core-js": "^3.8.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
@@ -37,7 +38,8 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
   }
 }
