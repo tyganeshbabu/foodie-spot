@@ -3,11 +3,6 @@ div.login-main {
   width: 100%;
 }
 
-/* * {
-  box-sizing: border-box;
-  margin: 0px auto;
-} */
-
 input {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
@@ -86,9 +81,14 @@ input {
   border-radius: 5px 5px 5px 5px;
   color: #000;
   margin-bottom: 1em;
-  padding: 0 16px;
-  width: 200px;
+  padding: 0 0 0 50px;
+  width: 100%;
   border: 1px solid #ccc;
+}
+
+.login-user-icon,
+.login-pass-icon {
+  position: absolute;
 }
 
 input.submit-btn {
@@ -101,8 +101,7 @@ input.submit-btn {
   font-weight: bold;
   text-transform: uppercase;
   padding: 0 2rem;
-  margin-left: 50px;
-  width: 80%;
+  width: 100%;
 }
 
 input.submit-btn:focus {

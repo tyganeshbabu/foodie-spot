@@ -4,6 +4,7 @@ body {
   /* background: #16222a !important;
   background: -webkit-linear-gradient(to right, #16222a, #3a6073);
   background: linear-gradient(to right, #16222a, #3a6073); */
+  background-color: #f8f9fa !important;
 }
 
 button,
@@ -798,3 +799,7 @@ a.remove:hover {
 background: #16222a;
 background: -webkit-linear-gradient(to right, #16222a, #3a6073);
 background: linear-gradient(to right, #16222a, #3a6073); */
+
+div.alertify-notifier {
+  color: #fff;
+}
