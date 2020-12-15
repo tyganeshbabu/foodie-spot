@@ -27,7 +27,7 @@ export const login = (username, password) => async dispatch => {
   const body = { username, password };
 
   try {
-    const res = await api.post('http://localhost:9000/auth/login', body);
+    const res = await api.post('/auth/login', body);
 
     dispatch({
       type: LOGIN_SUCCESS,
