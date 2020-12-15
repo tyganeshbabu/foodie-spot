@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
     return (
         <main role="main" className="container-fluid bill-container">
-
             <div className="wrap cf shadow-sm">
                 <h1 className="projTitle">BILLING DETAILS</h1>
                 <div className="heading cf">
@@ -31,7 +30,7 @@ const Cart = () => {
                                     <p>$15.00</p>
                                 </div>
                                 <div className="cartSection removeWrap">
-                                    <a href="#" className="remove">x</a>
+                                    <a href="!#" className="remove">x</a>
                                 </div>
                             </div>
                         </li>
@@ -52,7 +51,7 @@ const Cart = () => {
                                     <p>$15.00</p>
                                 </div>
                                 <div className="cartSection removeWrap">
-                                    <a href="#" className="remove">x</a>
+                                    <a href="!#" className="remove">x</a>
                                 </div>
                             </div>
                         </li>
@@ -73,7 +72,7 @@ const Cart = () => {
                                     <p>$15.00</p>
                                 </div>
                                 <div className="cartSection removeWrap">
-                                    <a href="#" className="remove">x</a>
+                                    <a href="!#" className="remove">x</a>
                                 </div>
                             </div>
                         </li>
@@ -96,7 +95,7 @@ const Cart = () => {
                                 </div>
 
                                 <div className="cartSection removeWrap">
-                                    <a href="#" className="remove">x</a>
+                                    <a href="!#" className="remove">x</a>
                                 </div>
                             </div>
 
@@ -123,7 +122,7 @@ const Cart = () => {
                             <span className="label">To Pay</span><span className="value">$44.00</span>
                         </li>
                         <li className="totalRow checkout-btn">
-                            <a href="#" className="btn continue">Checkout</a>
+                            <a href="!#" className="btn continue">Checkout</a>
                         </li>
                     </ul>
                 </div>

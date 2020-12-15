@@ -14,7 +14,7 @@ const Header = ({ auth: { isAuthenticated, user }, products: { addedItems }, his
         , function () { });
 
     const redirectLinks = e => history.push('/' + e.target.id);
-    console.log(addedItems);
+
     return (
         (isAuthenticated) ? <Navbar
             className='navbar navbar-expand-md fixed-top navbar-light bg-white home-navbar shadow-sm'
