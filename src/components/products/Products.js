@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProducts } from '../../actions/products';
-const Products = ({ getProducts, products: { products }, isAuthenticated }) => {
+const Products = ({ getProducts, products: { products } }) => {
     useEffect(() => {
         getProducts();
     }, [getProducts]);
@@ -38,8 +38,7 @@ const Products = ({ getProducts, products: { products }, isAuthenticated }) => {
     );
 }
 const mapStateToProps = (state) => ({
-    products: state.products,
-    isAuthenticated: state.auth.isAuthenticated
+    products: state.products
 });
 
 export default connect(mapStateToProps, { getProducts })(Products);
