@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { getOrders } from '../../actions/orders';
 import formatDate from '../../utils/formatDate';
 import { Link } from 'react-router-dom';
-const Orders = ({ getOrders, orders: { orders }, isAuthenticated }) => {
+const Orders = ({ getOrders, orders: { orders } }) => {
     useEffect(() => {
         getOrders();
     }, [getOrders]);
-
 
     return (
         <main role='main' className='container-fluid home-container'>
@@ -66,8 +65,7 @@ const Orders = ({ getOrders, orders: { orders }, isAuthenticated }) => {
 }
 
 const mapStateToProps = (state) => ({
-    orders: state.orders,
-    isAuthenticated: state.auth.isAuthenticated
+    orders: state.orders
 });
 
 

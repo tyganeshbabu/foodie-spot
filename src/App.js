@@ -6,6 +6,7 @@ import Orders from './components/orders/Orders';
 import NotFound from './components/layout/NotFound';
 import Header from './components/layout/Header';
 import 'alertifyjs/build/css/alertify.css';
+import PrivateRoute from './routing/PrivateRoute';
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,8 +43,8 @@ const App = () => {
             <Route exact path='/'
               component={() => (<Redirect to='/login' />)} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/products" component={Products} />
-            <Route exact path="/orders" component={Orders} />
+            <PrivateRoute exact path="/products" component={Products} />
+            <PrivateRoute exact path="/orders" component={Orders} />
             <Route component={NotFound} />
           </Switch>
         </Router>
