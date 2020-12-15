@@ -48,7 +48,7 @@ const Cart = ({ submitProducts, products: { addedItems, total } }) => {
                             <li className="totalRow">
                                 <span className="label">Tax (5%)</span><span className="value">&#8377;{calculateTax()}</span>
                             </li>
-                            <li className="totalRow final mr-3">
+                            <li className="totalRow final">
                                 <span className="label">To Pay</span><span className="value">&#8377;{calculateTotal()}</span>
                             </li>
                             <li className="totalRow checkout-btn mt-5">
