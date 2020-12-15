@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../../assets/logo.png";
 import { Navbar, NavDropdown, Nav, Badge } from "react-bootstrap";
-import { withRouter, useLocation } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import alertify from 'alertifyjs';
 import setAuthToken from '../../utils/setAuthToken';
 import { logout } from '../../actions/auth';
@@ -14,8 +14,6 @@ const Header = ({ location, auth: { isAuthenticated, user }, products: { addedIt
         , function () { });
 
     const redirectLinks = e => history.push('/' + e.target.id);
-    // let { location } = useLocation();
-    // console.log(location.pathname);
     return (
         (isAuthenticated) ? <Navbar
             className='navbar navbar-expand-md fixed-top navbar-light bg-white home-navbar shadow-sm'
