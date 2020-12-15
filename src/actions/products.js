@@ -4,14 +4,17 @@ import {
 } from './types';
 
 // Get products
-export const getProducts = () => async dispatch => {
+export const getProducts = () => async (dispatch, getState) => {
     try {
-        api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-        const res = await api.get('http://localhost:9000/products');
-        dispatch({
-            type: GET_PRODUCTS,
-            payload: res.data.data
-        });
+        //Loading if data is already in the state
+        if (!getState().products.products.length) {
+            api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+            const res = await api.get('http://localhost:9000/products');
+            dispatch({
+                type: GET_PRODUCTS,
+                payload: res.data.data
+            });
+        }
     } catch (err) {
         dispatch({
             type: AUTH_ERROR
