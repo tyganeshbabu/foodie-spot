@@ -24,14 +24,6 @@ export const getProducts = () => async (dispatch, getState) => {
 
 
 // Add item to cart
-export const addItemToCart = (productId) => dispatch => {
-    dispatch({
-        type: ADD_ITEM_TO_CART,
-        payload: productId
-    });
-
-};
-
 export const addProductToCart = (data) => dispatch => {
     dispatch({
         type: ADD_ITEM_TO_CART,

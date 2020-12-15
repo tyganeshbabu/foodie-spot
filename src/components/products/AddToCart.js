@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { addItemToCart, addProductToCart, removeProductFromCart } from '../../actions/products';
+import { addProductToCart, removeProductFromCart } from '../../actions/products';
 
-const AddToCart = ({ addProductToCart, addItemToCart, removeProductFromCart, productId, products: { products, addedItems, total } }) => {
-    // let addBtn = products.find((p) => p['_id'] === productId);
-    console.log(addedItems);
-    console.log(total);
+const AddToCart = ({ addProductToCart, removeProductFromCart, productId, products: { products, addedItems, total } }) => {
     let findProduct = addedItems.find(f => f['_id'] === productId);
-    console.log(findProduct);
     const [unitCounter, setUnitCounter] = useState(0);
 
     useEffect(() => {
-        console.log(unitCounter);
-        console.log(productId);
         if (unitCounter > 0) {
             addProductToCart({ 'id': productId, 'unit': unitCounter });
         }
-        console.log('called again');
     }, [unitCounter, productId, addProductToCart]);
+
     const addItem = () => {
         setUnitCounter(1);
-        // addItemToCart(productId);
     };
 
     const removeItem = (event) => {
@@ -56,4 +49,4 @@ const AddToCart = ({ addProductToCart, addItemToCart, removeProductFromCart, pro
 const mapStateToProps = (state) => ({
     products: state.products
 });
-export default connect(mapStateToProps, { addItemToCart, addProductToCart, removeProductFromCart })(AddToCart);
+export default connect(mapStateToProps, { addProductToCart, removeProductFromCart })(AddToCart);
