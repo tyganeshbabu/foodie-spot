@@ -7,3 +7,4 @@ export const GET_ORDERS = 'GET_ORDERS';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
 export const REMOVE_ITEM_FROM_CART = 'REMOVE_ITEM_FROM_CART';
+export const SUBMIT_PRODUCTS = 'SUBMIT_PRODUCTS';

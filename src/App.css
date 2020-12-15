@@ -496,6 +496,10 @@ ul {
   vertical-align: middle;
 }
 
+.removeWrap {
+  text-align: center;
+}
+
 .cart .items .cartSection h3 {
   font-size: 1em;
   font-weight: bold;
@@ -518,7 +522,7 @@ ul {
 }
 .cart .items .cartSection.qtyWrap,
 .cart .items .cartSection.prodTotal {
-  text-align: center;
+  text-align: right;
   padding-top: 1rem;
 }
 .cart .items .cartSection.qtyWrap p,
@@ -544,7 +548,10 @@ a.remove {
   color: #ffffff;
   font-weight: bold;
   background: #e0e0e0;
-  padding: 0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.4em;
   font-size: 0.75em;
   display: inline-block;
   border-radius: 100%;
@@ -556,12 +563,14 @@ a.remove {
   transition: all 0.25s linear;
 }
 a.remove:hover {
-  background: #f30;
+  background: #a31f10;
+  color: #fff;
+  text-decoration: none;
 }
 
-.checkout-btn {
+/* .checkout-btn {
   float: left;
-}
+} */
 
 .btn:link,
 .btn:visited {
@@ -596,6 +605,7 @@ a.remove:hover {
 .btn:focus,
 .btn:active {
   background: #e47718 !important;
+  color: #fff !important;
 }
 
 .promoCode .btn {
@@ -608,12 +618,14 @@ a.remove:hover {
   width: 35%;
 }
 .subtotal .totalRow {
-  padding: 0.5em;
+  /* padding: 0.5em;
+  padding-right: 2rem; */
   text-align: right;
 }
 .subtotal .totalRow.final {
   font-size: 1.25em;
   font-weight: bold;
+  padding-right: 1rem;
 }
 .subtotal .totalRow span {
   display: inline-block;
@@ -856,4 +868,14 @@ div.alertify-notifier {
 .quantity-minus:visited,
 .quantity-plus:visited {
   color: #fff;
+}
+
+button.checkout-btn {
+  height: 28px;
+  font-size: 0.8rem;
+  padding: 0px 1rem 0 1rem;
+}
+
+.nav-item.dropdown.active a {
+  color: #a31f10 !important;
 }

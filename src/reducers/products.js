@@ -1,5 +1,5 @@
 import {
-    GET_PRODUCTS, ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART
+    GET_PRODUCTS, ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART, SUBMIT_PRODUCTS
 } from '../actions/types';
 
 const initialState = {
@@ -54,6 +54,12 @@ export default function products(state = initialState, action) {
                 addedItems: newItems,
                 total: newTotal,
                 loading: false
+            };
+        case SUBMIT_PRODUCTS:
+            return {
+                ...state,
+                addedItems: [],
+                total: 0
             };
         default:
             return state;

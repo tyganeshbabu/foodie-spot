@@ -2,7 +2,6 @@ import api from './api';
 
 const setAuthToken = token => {
   if (token) {
-    // alert('inside set auth token');
     api.defaults.headers.common['Authorization'] = 'Bearer ' + token;
     localStorage.setItem('token', token);
   } else {

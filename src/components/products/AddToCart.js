@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { addProductToCart, removeProductFromCart } from '../../actions/products';
 
-const AddToCart = ({ addProductToCart, removeProductFromCart, productId, products: { products, addedItems, total } }) => {
+const AddToCart = ({ unit, addProductToCart, removeProductFromCart, productId, products: { addedItems } }) => {
     let findProduct = addedItems.find(f => f['_id'] === productId);
-    const [unitCounter, setUnitCounter] = useState(0);
-
+    const [unitCounter, setUnitCounter] = useState(unit);
+    useEffect(() => { setUnitCounter(unit) }, [unit]);
     useEffect(() => {
         if (unitCounter > 0) {
             addProductToCart({ 'id': productId, 'unit': unitCounter });

@@ -1,134 +1,67 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-const Cart = () => {
+import CartBill from './CartBill';
+import CartEmpty from './CartEmpty';
+import { submitProducts } from '../../actions/products';
+
+const Cart = ({ submitProducts, products: { addedItems, total } }) => {
+    const calculateTax = () => {
+        return (total * (5 / 100)).toFixed(2);
+    }
+
+    const calculateTotal = () => {
+        return (total + (total * (5 / 100)) + 25).toFixed(2);
+    }
+
+    const submitOrder = (event) => {
+        let products = addedItems.map(({ title, unit }) => ({ title, unit }));
+        submitProducts({ 'products': products, 'total': calculateTotal() });
+        event.preventDefault();
+    }
     return (
-        <main role="main" className="container-fluid bill-container">
-            <div className="wrap cf shadow-sm">
-                <h1 className="projTitle">BILLING DETAILS</h1>
-                <div className="heading cf">
-                    <h1>My Cart</h1>
-                    <Link to="/products" className="continue">Continue to Add Item</Link>
-                    {/* <a href="#" className="continue">Continue to Add Item</a> */}
-                </div>
-                <div className="cart">
-                    <ul className="cartWrap">
-                        <li className="items odd">
-                            <div className="infoWrap">
-                                <div className="cartSection">
-                                    <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className="itemImg" />
+        <>
+            {(addedItems.length) ? <main role="main" className="container-fluid bill-container">
+                <div className="wrap cf shadow-sm">
+                    <h1 className="projTitle">BILLING DETAILS</h1>
+                    <div className="heading cf">
+                        <h1>My Cart</h1>
+                        <Link to="/products" className="continue">Continue to Add Item</Link>
+                        {/* <a href="#" className="continue">Continue to Add Item</a> */}
+                    </div>
+                    <div className="cart">
+                        <ul className="cartWrap">
+                            <CartBill />
+                        </ul>
+                    </div>
 
-                                    <h3>Item Name 1</h3>
+                    <div className="subtotal cf">
+                        <ul className="pr-5">
+                            <li className="totalRow">
+                                <span className="label">Subtotal</span><span className="value">&#8377;{total.toFixed(2)}</span>
+                            </li>
 
-                                    <p>
-                                        <input type="text" className="qty" placeholder="3" /> x $5.00
-                </p>
+                            <li className="totalRow">
+                                <span className="label">Delivery Fee</span><span className="value">&#8377;25.00</span>
+                            </li>
 
-                                </div>
-
-                                <div className="prodTotal cartSection">
-                                    <p>$15.00</p>
-                                </div>
-                                <div className="cartSection removeWrap">
-                                    <a href="!#" className="remove">x</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="items even">
-                            <div className="infoWrap">
-                                <div className="cartSection">
-                                    <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className="itemImg" />
-
-                                    <h3>Item Name 1</h3>
-
-                                    <p>
-                                        <input type="text" className="qty" placeholder="3" /> x $5.00
-                </p>
-
-                                </div>
-
-                                <div className="prodTotal cartSection">
-                                    <p>$15.00</p>
-                                </div>
-                                <div className="cartSection removeWrap">
-                                    <a href="!#" className="remove">x</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li className="items odd">
-                            <div className="infoWrap">
-                                <div className="cartSection">
-                                    <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className="itemImg" />
-                                    <h3>Item Name 1</h3>
-
-                                    <p>
-                                        <input type="text" className="qty" placeholder="3" /> x $5.00
-                </p>
-
-                                </div>
-
-                                <div className="prodTotal cartSection">
-                                    <p>$15.00</p>
-                                </div>
-                                <div className="cartSection removeWrap">
-                                    <a href="!#" className="remove">x</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="items even">
-                            <div className="infoWrap">
-                                <div className="cartSection info">
-                                    <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className="itemImg" />
-
-                                    <h3>Item Name 1</h3>
-
-                                    <p>
-                                        <input type="text" className="qty" placeholder="3" /> x $5.00
-                </p>
-
-
-                                </div>
-
-                                <div className="prodTotal cartSection">
-                                    <p>$15.00</p>
-                                </div>
-
-                                <div className="cartSection removeWrap">
-                                    <a href="!#" className="remove">x</a>
-                                </div>
-                            </div>
-
-                        </li>
-
-
-                    </ul>
+                            <li className="totalRow">
+                                <span className="label">Tax (5%)</span><span className="value">&#8377;{calculateTax()}</span>
+                            </li>
+                            <li className="totalRow final mr-3">
+                                <span className="label">To Pay</span><span className="value">&#8377;{calculateTotal()}</span>
+                            </li>
+                            <li className="totalRow checkout-btn mt-5">
+                                <a href="!#" className="btn continue p-3" onClick={submitOrder}>Submit Order</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div className="subtotal cf">
-                    <ul className="pr-5">
-                        <li className="totalRow">
-                            <span className="label">Subtotal</span><span className="value">$35.00</span>
-                        </li>
-
-                        <li className="totalRow">
-                            <span className="label">Shipping</span><span className="value">$5.00</span>
-                        </li>
-
-                        <li className="totalRow">
-                            <span className="label">Tax</span><span className="value">$4.00</span>
-                        </li>
-                        <li className="totalRow final">
-                            <span className="label">To Pay</span><span className="value">$44.00</span>
-                        </li>
-                        <li className="totalRow checkout-btn">
-                            <a href="!#" className="btn continue">Checkout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </main>
+            </main>
+                :
+                <CartEmpty />}
+        </>
     )
 }
 
@@ -136,4 +69,4 @@ const mapStateToProps = (state) => ({
     products: state.products
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, { submitProducts })(Cart);
