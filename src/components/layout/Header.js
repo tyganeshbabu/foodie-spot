@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../../assets/logo.png";
 import { Navbar, NavDropdown, Nav, Badge } from "react-bootstrap";
-import { withRouter, useLocation } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import alertify from 'alertifyjs';
 import setAuthToken from '../../utils/setAuthToken';
 import { logout } from '../../actions/auth';
