@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProducts } from '../../actions/products';
+import AddToCart from './AddToCart';
 const Products = ({ getProducts, products: { products } }) => {
     useEffect(() => {
         getProducts();
@@ -24,7 +25,7 @@ const Products = ({ getProducts, products: { products } }) => {
                                         <div className='col-6'>
                                             <p className='font-weight-bold product-title'>{product.title}</p>
                                             <small className='text-muted h6'>&#8377;{product.unitprice['$numberDecimal']}</small>
-                                            <button className='btn btn-primary btn-sm d-block mt-2'>Add</button>
+                                            <AddToCart productId={product['_id']} />
                                         </div>
                                     </div>
                                 </div>

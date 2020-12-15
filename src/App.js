@@ -5,6 +5,7 @@ import Products from './components/products/Products';
 import Orders from './components/orders/Orders';
 import NotFound from './components/layout/NotFound';
 import Header from './components/layout/Header';
+import Cart from './components/orders/Cart';
 import 'alertifyjs/build/css/alertify.css';
 import PrivateRoute from './routing/PrivateRoute';
 import {
@@ -45,6 +46,7 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/products" component={Products} />
             <PrivateRoute exact path="/orders" component={Orders} />
+            <PrivateRoute exact path="/cart" component={Cart} />
             <Route component={NotFound} />
           </Switch>
         </Router>
