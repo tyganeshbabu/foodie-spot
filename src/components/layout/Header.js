@@ -8,13 +8,13 @@ import { logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Header = ({ auth: { isAuthenticated, user }, history, logout }) => {
+const Header = ({ auth: { isAuthenticated, user }, products: { addedItems }, history, logout }) => {
 
     const logoutHandler = () => alertify.confirm('Logout', 'Are you sure you want to logout?', function () { logout(); setAuthToken(); history.push('/login') }
         , function () { });
 
     const redirectLinks = e => history.push('/' + e.target.id);
-
+    console.log(addedItems);
     return (
         (isAuthenticated) ? <Navbar
             className='navbar navbar-expand-md fixed-top navbar-light bg-white home-navbar shadow-sm'
@@ -40,9 +40,11 @@ const Header = ({ auth: { isAuthenticated, user }, history, logout }) => {
                         <NavDropdown.Item id="orders" onClick={redirectLinks}>Orders</NavDropdown.Item>
                         <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link className='nav-item'>
-                        <i className="fas fa-utensils"></i><span className="ml-2">Cart</span><Badge className="ml-3" variant="dark">9</Badge>
+                    <Nav.Link className='nav-item' id="cart" onClick={redirectLinks}>
+                        <i className="fas fa-utensils mr-2"></i>Cart
                     </Nav.Link>
+
+                    <Badge id="cart" className="mt-2" variant="dark"> {addedItems.length} </Badge>
                 </Nav>
             </Navbar.Collapse>
         </Navbar> : null
@@ -55,7 +57,8 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    auth: state.auth
+    auth: state.auth,
+    products: state.products
 });
 
 export default withRouter(connect(mapStateToProps, { logout })(Header));
