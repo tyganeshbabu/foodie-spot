@@ -13,7 +13,7 @@ const CartBill = ({ removeProductFromCart, products: { addedItems } }) => {
         addedItems.map((product, i) =>
             <li key={i} className="items even">
                 <div className="infoWrap">
-                    <div className="cartSection w-75">
+                    <div className="cartSection">
                         <img
                             className='itemImg'
                             src={product.imgurl}
