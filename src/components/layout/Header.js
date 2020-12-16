@@ -46,7 +46,7 @@ const Header = ({ location, auth: { isAuthenticated, user }, products: { addedIt
                     <Nav.Link className={(location.pathname === '/cart') ? 'active nav-item' : 'nav-item'} id="cart" onClick={redirectLinks}>
                         <i className="fas fa-utensils mr-2"></i>Cart
                     </Nav.Link>
-                    <Badge id="cart" className="mt-2" variant="dark"> {addedItems.length} </Badge>
+                    <Badge id="cart" className="pt-2" variant="dark"> {addedItems.length} </Badge>
                 </Nav>
             </Navbar.Collapse>
         </Navbar> : null

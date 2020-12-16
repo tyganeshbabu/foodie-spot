@@ -46,8 +46,7 @@ export const submitProducts = (postData) => async dispatch => {
     try {
         const userid = JSON.parse(localStorage.getItem('user')).id;
         api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-        const res = await api.post('/orders/' + userid, postData);
-        console.log(res);
+        await api.post('/orders/' + userid, postData);
         alertify.alert('Order Status', 'Order successfully saved!')
         dispatch({
             type: SUBMIT_PRODUCTS
