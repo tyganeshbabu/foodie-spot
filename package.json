@@ -41,6 +41,5 @@
       "last 1 safari version",
       "ie 11"
     ]
-  },
-  "proxy": "http://ec2-18-219-204-150.us-east-2.compute.amazonaws.com:8000"
+  }
 }
