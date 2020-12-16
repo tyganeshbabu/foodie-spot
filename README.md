@@ -17,7 +17,7 @@ Foodie spot is an online website where users can login and order food items. Use
 
 **Node JS App** :[https://github.com/tyganeshbabu/foodie-spot-node](https://github.com/tyganeshbabu/foodie-spot-node)
 
-**Images\*\*** :\*\*
+**Images:**
 
 All the food product images used in Foodie Spot are free licensed and taken from[_https://pexels.com_](https://pexels.com/). Images are uploaded via S3 bucket UI provided by Amazon Web Services.
 
@@ -69,9 +69,4 @@ State of the application is managed by Redux state container. Steps involved:
 - Components are broke up into smaller components wherever possible
 - Components are connected to Redux Store by using Connect function from React Redux library
 - Routing to invalid url will result in 404 page designed as separate component
-- AddToCart component is used in both product listing page and checkout page. It is used for
-
-- Adding products to cart
-- Removing products from cart
-- Incrementing units of product
-- Decrementing units of product
+- AddToCart component is used in both product listing page and checkout page. It is used for adding products to cart, Removing products from cart, Incrementing units of product, Decrementing units of product
