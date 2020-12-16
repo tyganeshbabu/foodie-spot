@@ -5,8 +5,7 @@ Foodie spot is an online website where users can login and order food items. Use
 - React JS
 - Node JS
 - Mongo Database
-- AWS Amplify (For React Deployment)
-- AWS EC2 instance ( For Node Deployment)
+- AWS EC2 instance ( For React and Node Deployment)
 - AWS S3 (For storing images)
 
 **Github Links:**
