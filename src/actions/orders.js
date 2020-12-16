@@ -8,7 +8,7 @@ export const getOrders = () => async dispatch => {
     try {
         const userid = JSON.parse(localStorage.getItem('user')).id;
         api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-        const res = await api.get('/orders/' + userid);
+        const res = await api.get('http://ec2-18-219-204-150.us-east-2.compute.amazonaws.com:8000/orders/' + userid);
         dispatch({
             type: GET_ORDERS,
             payload: res.data.data

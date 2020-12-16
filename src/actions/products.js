@@ -10,7 +10,7 @@ export const getProducts = () => async (dispatch, getState) => {
         //Loading if data is already in the state
         if (!getState().products.products.length) {
             api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-            const res = await api.get('/products');
+            const res = await api.get('http://ec2-18-219-204-150.us-east-2.compute.amazonaws.com:8000/products');
             dispatch({
                 type: GET_PRODUCTS,
                 payload: res.data.data
@@ -46,7 +46,7 @@ export const submitProducts = (postData) => async dispatch => {
     try {
         const userid = JSON.parse(localStorage.getItem('user')).id;
         api.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-        await api.post('/orders/' + userid, postData);
+        await api.post('http://ec2-18-219-204-150.us-east-2.compute.amazonaws.com:8000/orders/' + userid, postData);
         alertify.alert('Order Status', 'Order successfully saved!')
         dispatch({
             type: SUBMIT_PRODUCTS
