@@ -27,7 +27,7 @@ export const login = (username, password) => async dispatch => {
   const body = { username, password };
 
   try {
-    const res = await api.post('/auth/login', body);
+    const res = await api.post('http://ec2-18-219-204-150.us-east-2.compute.amazonaws.com:8000/auth/login', body);
 
     dispatch({
       type: LOGIN_SUCCESS,
