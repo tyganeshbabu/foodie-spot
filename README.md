@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+Foodie spot is an online website where users can login and order food items. Users can add / edit / delete products into their cart. Users can then checkout and place their order. Users can also view their past orders under Orders screen.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Technologies Used:**
 
-## Available Scripts
+- React JS
+- Node JS
+- Mongo Database
+- AWS Amplify (For React Deployment)
+- AWS EC2 instance ( For Node Deployment)
+- AWS S3 (For storing images)
 
-In the project directory, you can run:
+**Github Links:**
 
-### `npm start`
+**HTML Design:** [https://github.com/tyganeshbabu/foodie-spot-design](https://github.com/tyganeshbabu/foodie-spot-design)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**React App:** [https://github.com/tyganeshbabu/foodie-spot/](https://github.com/tyganeshbabu/foodie-spot/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Node JS App** :[https://github.com/tyganeshbabu/foodie-spot-node](https://github.com/tyganeshbabu/foodie-spot-node)
 
-### `npm test`
+**Images\*\*** :\*\*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All the food product images used in Foodie Spot are free licensed and taken from[_https://pexels.com_](https://pexels.com/). Images are uploaded via S3 bucket UI provided by Amazon Web Services.
 
-### `npm run build`
+**Logo:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Logo used in website is generated free via[_https://logomaker.thehoth.com/_](https://logomaker.thehoth.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**HTML Responsive Design:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Technologies / Libraries Used:** HTML, CSS, Bootstrap CSS, Bootstrap JS, Jquery Font Awesome Icons
 
-### `npm run eject`
+**React App:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**External Libraries Used:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Axios
+- Alertify
+- React Bootstrap
+- React Router DOM
+- Redux
+- React Redux
+- Redux Thunk
+- Bootstrap CSS
+- Font Awesome Library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Authentication:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Json Web Tokens (JWT) are currently set for authentication, which is valid for 30 minutes. The timing can be adjusted from the node backend environment variable file.
 
-## Learn More
+**Services Accessed:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- POST /login - Returns JWT which should be shared in Authorization Header for further calls
+- GET /products - Returns list of food products and their details
+- GET /orders - Returns list of orders made by login user
+- POST /orders - Saves order
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**State Management:**
 
-### Code Splitting
+State of the application is managed by Redux state container. Steps involved:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Created Store
+- Created Reducer functions and combined via Combined Reducer for accessing states
+- Actions are dispatched from actions and action creator
+- User details are stored in local storage to avoid removal of data from Redux on page refresh
 
-### Analyzing the Bundle Size
+**Components:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- All the components are functional arrow components that uses useState and useEffect hooks for managing internal states
+- Components are broke up into smaller components wherever possible
+- Components are connected to Redux Store by using Connect function from React Redux library
+- Routing to invalid url will result in 404 page designed as separate component
+- AddToCart component is used in both product listing page and checkout page. It is used for
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Adding products to cart
+- Removing products from cart
+- Incrementing units of product
+- Decrementing units of product
