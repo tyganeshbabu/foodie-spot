@@ -1,9 +1,6 @@
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
-  /* background: #16222a !important;
-  background: -webkit-linear-gradient(to right, #16222a, #3a6073);
-  background: linear-gradient(to right, #16222a, #3a6073); */
   background-color: #f8f9fa !important;
 }
 
@@ -150,100 +147,6 @@ a.dropdown-item:active {
   background: #eee;
   color: #a31f10;
 }
-/** Button animation css **/
-
-/* button {
-    background: #4CAF50;
-    border: none;
-    border-radius: 2px;
-    padding: 4px 14px;
-    font-size: 0.8rem;
-    color: #fff;
-    text-transform: uppercase;
-    max-height: 23px;
-    min-width: 48px;
-    display: flex;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  button:focus {
-    outline: none;
-  }
-  button.counter {
-    width: 84px;
-    background-color: #fff;
-    color: #4CAF50;
-    justify-content: space-around;
-  }
-  button.counter .text {
-    display: none;
-  }
-  button [id^="sym"] {
-    right: 0;
-    position: relative;
-    display: block;
-    opacity: 0;
-    transition: .1s;
-  }
-  button #symQty {
-    top: -20px;
-  }
-  button.animate-symbol [id^="sym"] {
-    opacity: 1;
-    width: 20px;
-  }
-  button.animate-symbol #symQty {
-    top: 0;
-    animation: animateQty 0.1s;
-    display: flex;
-    flex-direction: column;
-  }
-  button.animate-symbol #symQty div {
-    height: 15px;
-  }
-  button.animate-symbol #symQty div:not(:first-child) {
-    margin-top: 4px;
-  }
-  button.animate-symbol #symPlus {
-    left: 13px;
-    animation: animatePlus 0.225s;
-    cursor: pointer;
-  }
-  button.animate-symbol #symMinus {
-    right: 13px;
-    animation: animateMinus 0.225s;
-    cursor: pointer;
-  }
-  
-  @keyframes animateQty {
-    from {
-      top: -20px;
-    }
-    to {
-      top: 0;
-    }
-  }
-  @keyframes animatePlus {
-    from {
-      left: 0;
-    }
-    to {
-      left: 13px;
-    }
-  }
-  @keyframes animateMinus {
-    from {
-      right: 0;
-    }
-    to {
-      right: 13px;
-    }
-  } */
-
-/* .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; 
- } */
 
 div[aria-labelledby="basic-nav-dropdown"].dropdown-menu {
   top: 50px !important;
@@ -350,28 +253,6 @@ div[aria-labelledby="basic-nav-dropdown"] a.dropdown-item:active {
 .invoice-footer #later {
   margin-right: 5px;
 }
-
-/* .btn {
-    border: none;
-    padding: 5px 0px;
-    background: none;
-    cursor: pointer;
-    letter-spacing: 1px;
-    outline: none;
-  }
-  
-  .btn.btn-secondary {
-    color: rgba(0, 0, 0, 0.3);
-  }
-  
-  .btn.btn-primary {
-    color: var(--primary-color);
-  }
-  
-  .btn#later {
-    margin-right: 2em;
-  }
-   */
 
 /** Cart design **/
 
@@ -568,10 +449,6 @@ a.remove:hover {
   text-decoration: none;
 }
 
-/* .checkout-btn {
-  float: left;
-} */
-
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -618,8 +495,6 @@ a.remove:hover {
   width: 35%;
 }
 .subtotal .totalRow {
-  /* padding: 0.5em;
-  padding-right: 2rem; */
   text-align: right;
 }
 .subtotal .totalRow.final {
@@ -658,9 +533,6 @@ a.remove:hover {
     font-size: 90%;
   }
 
-  /* .cart .items {
-      padding:0;
-  } */
   .cart .items .cartSection {
     width: 90%;
     display: block;
@@ -680,7 +552,6 @@ a.remove:hover {
   .cart .items .cartSection.qtyWrap:before {
     content: "QTY";
     display: block;
-    /* font-family: "Montserrat", sans-serif; */
     padding: 0.25em;
     font-size: 0.75em;
   }
@@ -735,31 +606,6 @@ a.remove:hover {
   font-size: 13px;
   padding: 7px 0 7px 0;
 }
-/* .past-order-account-page-left .nav-link {
-    padding: 18px 20px;
-    border: none;
-    font-weight: 600;
-    color: #535665;
-}
-.past-order-account-page-left .nav-link i {
-    width: 28px;
-    height: 28px;
-    background: #535665;
-    display: inline-block;
-    text-align: center;
-    line-height: 29px;
-    font-size: 15px;
-    border-radius: 50px;
-    margin: 0 7px 0 0px;
-    color: #fff;
-}
-.past-order-account-page-left .nav-link.active {
-    background: #f3f7f8;
-    color: #282c3f !important;
-}
-.past-order-account-page-left .nav-link.active i {
-    background: #282c3f !important;
-}  */
 
 .btn-primary,
 .btn-primary:focus,
@@ -803,15 +649,6 @@ a.remove:hover {
   }
 }
 
-/* .past-orders {
-  background: #0c5260 !important;
-} */
-
-/* 
-background: #16222a;
-background: -webkit-linear-gradient(to right, #16222a, #3a6073);
-background: linear-gradient(to right, #16222a, #3a6073); */
-
 div.alertify-notifier {
   color: #fff;
 }
@@ -843,12 +680,7 @@ div.alertify-notifier {
   color: #fff;
   text-decoration: none;
 }
-/* .quantity__minus {
-  border-radius: 3px 0 0 3px;
-}
-.quantity__plus {
-  border-radius: 0 3px 3px 0;
-} */
+
 .quantity-input {
   width: 22px;
   height: 30px;

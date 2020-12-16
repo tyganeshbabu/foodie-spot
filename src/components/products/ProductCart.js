@@ -4,6 +4,7 @@ import AddToCart from './AddToCart';
 
 const ProductCart = ({ product, products: { addedItems } }) => {
     const [unit, setUnit] = useState(0);
+    console.log(product.imgurl);
     useEffect(() => {
         if (addedItems.length) {
             let obj = addedItems.find(p => p['_id'] === product['_id']);
